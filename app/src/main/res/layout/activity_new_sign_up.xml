@@ -1,0 +1,198 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".NewSignUp"
+    >
+
+    <data>
+        <variable
+            name="SignUpViewModel"
+            type="com.telcco.klipmunk.SignUpViewModel" />
+    </data>
+<ScrollView
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+       >
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:id="@+id/signin_linear"
+
+        >
+
+        <ImageView
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_gravity="center"
+            android:src="@drawable/ic_dark"
+            android:layout_margin="10dp"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="K  L  I  P  M  U  N  K"
+            android:gravity="center"
+            android:textSize="20sp"
+            android:textColor="@color/black"
+            android:layout_marginBottom="10dp"/>
+
+
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@={SignUpViewModel.nameAdd}"
+            android:layout_margin="10dp"
+            android:background="@drawable/edi_text_box"
+            android:padding="10dp"
+            android:hint="Full Name"
+
+            />
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@={SignUpViewModel.emailAdd}"
+            android:layout_margin="10dp"
+            android:background="@drawable/edi_text_box"
+            android:padding="10dp"
+            android:hint="Email"/>
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@={SignUpViewModel.passwordAdd}"
+            android:layout_margin="10dp"
+            android:background="@drawable/edi_text_box"
+            android:padding="10dp"
+            android:hint="Password"
+            android:password="true"/>
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@={SignUpViewModel.passwordAdd}"
+            android:layout_margin="10dp"
+            android:background="@drawable/edi_text_box"
+            android:padding="10dp"
+            android:hint="Confirm Password"
+            android:password="true"
+            android:visibility="gone"/>
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="SignUp"
+            android:onClick="@{(v)-> SignUpViewModel.onClick(v)}"
+            android:layout_gravity="center"
+            android:layout_margin="10dp"
+            android:background="@drawable/edi_text_box"
+            android:padding="10dp"
+         />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:text="Or Sign in with"
+            android:layout_gravity="center"
+            android:textSize="15sp"/>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:columnCount="2"
+            android:layout_gravity="center"
+            android:layout_marginBottom="100dp"
+            android:orientation="horizontal"
+           >
+
+            <com.google.android.gms.common.SignInButton
+                android:layout_width="wrap_content"
+                android:layout_height="52dp"
+                android:layout_margin="10dp"
+                android:background="@drawable/edi_text_box"
+                android:id="@+id/googleSigIn"
+                android:visibility="visible"/>
+
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="15dp"
+                android:orientation="horizontal"
+                android:background="@drawable/edi_text_box"
+
+                android:layout_margin="10dp"
+                android:visibility="gone">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/googleplus" />
+
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_margin="3dp"
+                    android:text="google +"
+                    android:textColor="@color/black" />
+
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="52dp"
+                android:padding="12dp"
+                android:orientation="horizontal"
+                android:background="@drawable/edi_text_box"
+                android:layout_margin="10dp">
+
+                <ImageView
+                    android:layout_width="28dp"
+                    android:layout_height="28dp"
+                    android:src="@drawable/facebook" />
+
+
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_margin="3dp"
+                    android:text="Facebook"
+                    android:textColor="@color/black" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </LinearLayout>
+        <ProgressBar
+            android:id="@+id/progressBar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="8dp"
+            android:visibility="@{SignUpViewModel.busy}"
+            android:layout_centerInParent="true"/>
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_group2"
+            android:layout_below="@+id/signin_linear"
+            />
+    </RelativeLayout>
+
+
+</ScrollView>
+
+</layout>

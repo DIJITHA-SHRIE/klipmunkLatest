@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:clickable="true"
+    android:orientation="vertical"
+    android:visibility="visible"
+    android:id="@+id/layout">
+    
+    <com.andremion.counterfab.CounterFab
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/fabHead"
+        app:srcCompat="@drawable/ic_dark"
+        app:fabSize="normal"
+        app:backgroundTint="@color/white"
+        />
+
+</RelativeLayout>
